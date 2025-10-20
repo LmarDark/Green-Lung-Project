@@ -1,6 +1,7 @@
 # Platformer template
-Template project for a platformer game.
+
 
 
 # Credits
-Graphics by [Kenney](https://kenney.nl)
+Programador - [LmarDark](https://github.com/LmarDark)
+Gráficos - [Pedro-Miguel20](https://github.com/Pedro-Miguel20)
