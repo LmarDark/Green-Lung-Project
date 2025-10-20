@@ -3,8 +3,8 @@ collection_instances {
   id: "player"
   collection: "/game/player.collection"
   position {
-    x: 720.0
-    y: 650.0
+    x: 687.0
+    y: 658.0
     z: 1.0
   }
 }
@@ -35,15 +35,16 @@ embedded_instances {
   "  id: \"camera\"\n"
   "  type: \"camera\"\n"
   "  data: \"aspect_ratio: 1.0\\n"
-  "fov: 35.0\\n"
-  "near_z: 0.1\\n"
+  "fov: 40.0\\n"
+  "near_z: -2.0\\n"
   "far_z: 1000.0\\n"
   "orthographic_projection: 1\\n"
+  "orthographic_zoom: 0.5\\n"
   "\"\n"
   "}\n"
   ""
   position {
-    x: 1457.0
-    y: 1185.0
+    x: 1478.0
+    y: 1206.0
   }
 }

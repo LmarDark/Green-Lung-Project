@@ -13,7 +13,6 @@ local jump_takeoff_speed = 1200
 
 -- pre-hashing ids improves performance
 local msg_contact_point_response = hash("contact_point_response")
-local msg_animation_done = hash("animation_done")
 local group_obstacle = hash("ground")
 local input_left = hash("left")
 local input_right = hash("right")
@@ -28,20 +27,11 @@ function init(self)
 	-- this lets us handle input in this script
 	msg.post(".", "acquire_input_focus")
 
-	-- activate camera attached to the player collection
-	-- this will send camera updates to the render script
-	msg.post("#camera", "acquire_camera_focus")
-	msg.post("@render:", "use_camera_projection")
-
 	-- initial player velocity
 	self.velocity = vmath.vector3(0, 0, 0)
-	-- the direction the player is facing
 	self.facing_direction = 0
-	-- support variable to keep track of collisions and separation
 	self.correction = vmath.vector3()
-	-- if the player stands on ground or not
 	self.ground_contact = false
-	-- the currently playing animation
 	self.anim = nil
 end
 
@@ -54,6 +44,7 @@ local function play_animation(self, anim)
 		self.anim = anim
 	end
 end
+
 
 local function update_animations(self)
 	-- make sure the player character faces the right way
@@ -128,6 +119,7 @@ local function handle_obstacle_contact(self, normal, distance)
 end
 
 function on_message(self, message_id, message, sender)
+	
 	-- check if we received a contact point message
 	if message_id == msg_contact_point_response then
 		-- check that the object is something we consider an obstacle
